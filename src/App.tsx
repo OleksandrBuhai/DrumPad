@@ -1,16 +1,15 @@
-import { Test } from "./components/Com"
+import { Main } from "@/components/Main/Main"
+
+
 
 function App() {
-  
+
 
   return (
-    <>
-    <div className='text-red-500 justify-center flex'>
-      Hello world
-      <Test/>
-      
+    <div className="flex justify-center items-center h-screen">
+      <Main />
+   
     </div>
-    </>
   )
 }
 
