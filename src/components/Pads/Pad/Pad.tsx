@@ -1,6 +1,5 @@
-// Pad.tsx
+
 import { selectButtonIntervals, setButtonInterval } from '@/slice/intervalSlice/intervalSlice';
-import { RootState } from '@/slice/store';
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -68,7 +67,19 @@ export const Pad: React.FC<PadType> = ({ src, keyName, keyNumber }) => {
 
 
   return (
-    <div className={`bg-${isClicked ? 'green' : 'red'}-500 text-white w-[7rem] h-[5rem] flex items-center justify-center`} onClick={clickHandler}>
+    <div
+    className={`bg-${isClicked ? '[#5c0000]' : '[#7f0bec]'}
+    text-white w-[7rem] h-[5rem] flex items-center justify-center
+    ${isClicked ? 'bg-[#5c0000]' : 'bg-[#632a98]'}
+    rounded-xl hover:bg-red-500 transition duration-300
+    ${isClicked ? 'shadow-md' : ''}
+     shadow-xl  md:shadow-lg shadow-gray-500/50
+    
+    `}
+  onClick={clickHandler}
+     
+     >
+
       <audio ref={audioRef} src={src} preload="auto"></audio>
       {keyName}
     </div>
